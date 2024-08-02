@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Item from "./Item";
+import Filter from "./Filter";
+
 
 function ShoppingList({ items }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -17,12 +19,14 @@ function ShoppingList({ items }) {
   return (
     <div className="ShoppingList">
       <div className="Filter">
-        <select name="filter" onChange={handleCategoryChange}>
-          <option value="All">Filter by category</option>
-          <option value="Produce">Produce</option>
-          <option value="Dairy">Dairy</option>
-          <option value="Dessert">Dessert</option>
-        </select>
+        <Filter 
+        name="filter" 
+        onCategoryChange={handleCategoryChange} 
+        value1 = "All" data1 = "Filter by category"
+        value2 ="Produce" data2 = "Produce"
+        value3 = "Dairy" data3 = "Dairy"
+        value4 = "Dessert" data4 = "Dessert"
+        />
       </div>
       <ul className="Items">
         {itemsToDisplay.map((item) => (
