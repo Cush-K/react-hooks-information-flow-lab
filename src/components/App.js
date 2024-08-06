@@ -7,7 +7,7 @@ import Header from "./Header";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
-  const data = isDarkMode ? "light" : "dark"
+  const data = isDarkMode ? "Dark" : "Light"
 
   function handleModeChange() {
     setIsDarkMode((isDarkMode) => !isDarkMode);
